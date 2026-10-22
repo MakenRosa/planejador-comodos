@@ -1,0 +1,36 @@
+# Dependências e arquivos gerados (recriados por npm install / npm run build)
+node_modules/
+dist/
+*.tsbuildinfo
+.vite/
+
+# Logs e caches
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.eslintcache
+.cache/
+
+# Configurações locais de editor e ferramentas (cada PC tem as suas)
+.claude/
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Variáveis de ambiente
+.env
+.env.*
+
+# Documentos locais (não fazem parte da aplicação)
+public/melhorias.html
+
+# A casa de cada um (projeto, checkpoints, modelos e scans): pode ser um repositório git próprio, privado
+casa/

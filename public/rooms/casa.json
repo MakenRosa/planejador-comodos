@@ -1,0 +1,39 @@
+{
+  "app": "planejador-casa",
+  "name": "Apartamento de exemplo",
+  "exteriorWall": 0.15,
+  "rooms": [
+    {
+      "file": "sala-cozinha.json",
+      "name": "Sala e cozinha",
+      "spaceNames": {
+        "livingRoom": "Sala",
+        "kitchen": "Cozinha"
+      }
+    },
+    {
+      "file": "quarto.json",
+      "name": "Quarto"
+    },
+    {
+      "file": "banheiro.json",
+      "name": "Banheiro"
+    }
+  ],
+  "connections": [
+    {
+      "a": 0,
+      "aOpening": "ECBAACBE",
+      "b": 1,
+      "bOpening": "B7934AFD",
+      "gap": 0.12
+    },
+    {
+      "a": 0,
+      "aOpening": "C51CEB69",
+      "b": 2,
+      "bOpening": "432EF248",
+      "gap": 0.12
+    }
+  ]
+}

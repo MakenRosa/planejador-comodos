@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Planejador de Cômodos</title>
+    <script>
+      // aplica o tema salvo antes do primeiro desenho (sem piscar claro no modo escuro)
+      try {
+        var t = JSON.parse(localStorage.getItem('planejador-comodos:config:v1') || '{}').theme
+        var d = t === 'dark' || (t !== 'light' && matchMedia('(prefers-color-scheme: dark)').matches)
+        document.documentElement.dataset.theme = d ? 'dark' : 'light'
+        document.documentElement.style.colorScheme = d ? 'dark' : 'light'
+      } catch (e) {}
+    </script>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect x='3' y='3' width='26' height='26' rx='4' fill='none' stroke='%232563eb' stroke-width='3'/><rect x='8' y='15' width='10' height='9' fill='%232563eb'/></svg>" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

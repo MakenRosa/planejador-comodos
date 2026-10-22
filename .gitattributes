@@ -1,0 +1,9 @@
+# Fim de linha LF em todos os PCs (o app grava a pasta casa/ com LF; evita diffs só de CRLF no Windows)
+* text=auto eol=lf
+
+# Binários
+*.glb binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
