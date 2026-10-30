@@ -21,6 +21,14 @@ Planejador de móveis em 3D a partir dos scans do **Apple RoomPlan** (o LiDAR do
 
 A lista completa está em [docs/RECURSOS.md](docs/RECURSOS.md).
 
+## English summary
+
+A browser-based 3D furniture planner that imports Apple RoomPlan scans, joins rooms through shared doors, and supports parametric furniture and collision warnings. The public demo uses a fictional apartment. The static build saves changes in the browser; the local development server can persist projects as JSON files.
+
+## Validação
+
+A [CI](https://github.com/MakenRosa/planejador-comodos/actions/workflows/ci.yml) executa verificação de tipos, testes e build. Os [testes automatizados atuais](src/lib/house.test.ts) cobrem importação do RoomPlan e montagem dos cômodos com os dados de exemplo. Eles não substituem a conferência visual da interface 3D nem a validação das medidas de um imóvel real.
+
 ## Stack
 
 React 19 · TypeScript (strict) · Three.js com React Three Fiber e drei · Zustand · Vite · Vitest
@@ -28,7 +36,7 @@ React 19 · TypeScript (strict) · Three.js com React Three Fiber e drei · Zust
 ## Decisões técnicas
 
 - **Sem backend.** Um plugin pequeno do Vite ([tools/casa-sync.ts](tools/casa-sync.ts)) grava o projeto em arquivos durante o desenvolvimento. O mesmo build roda como site estático, só com o armazenamento do navegador.
-- **Geometria em funções puras.** Importação do RoomPlan, montagem da casa, colisões e encaixes ficam em [src/lib](src/lib), sem depender de React nem de Three.js, e são testados com a casa de exemplo.
+- **Geometria em funções puras.** Importação do RoomPlan, montagem da casa, colisões e encaixes ficam em [src/lib](src/lib), sem depender de React nem de Three.js. Os testes atuais exercitam a importação e a montagem com a casa de exemplo.
 - **Móveis gerados por código** ([src/furniture](src/furniture)) em vez de modelos prontos: medidas brasileiras de verdade (camas, tomadas NBR 14136) e nenhum arquivo 3D pesado no repositório.
 - **Arquivos amigáveis ao git.** JSON indentado com as coordenadas numa linha só, para `git diff` mostrar exatamente o que mudou (um móvel movido, uma cor trocada).
 
